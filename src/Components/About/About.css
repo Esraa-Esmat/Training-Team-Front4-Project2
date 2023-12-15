@@ -1,0 +1,147 @@
+.font-loader {
+    font-family: "Philosopher";
+  }
+  .about-sec1 h2,
+  .about-sec2 h2,
+  .about-sec3 h2 {
+    font-weight: 500;
+    font-size: 40px;
+    padding-bottom: 50px;
+  }
+  .about-sec1 p {
+    padding: 0 60px 30px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: #222222;
+  }
+  .about-sec1 img {
+    border-radius: 55px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .about-content {
+    padding-top: 80px;
+    padding-bottom: 30px;
+  }
+  .mission,
+  .vision {
+    position: relative;
+  }
+  .prtn {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-color: #cacaca;
+  }
+  .prtn-cont {
+    padding-top: 80px;
+  }
+  .prtn-cont h5 {
+    margin: 15px auto;
+    font-size: 28px;
+  }
+  .prtn-cont p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #0062ff;
+  }
+  #main-prtn {
+    transform: scale(1.3, 1.3) translate(0, -30px);
+  }
+  .about-sec2 {
+    border: 1px solid #16b5ff73;
+    border-radius: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 100%;
+    margin: 70px 0;
+  }
+  .about-sec2 img {
+    width: 500px;
+    height: 410px;
+    border-radius: 32px;
+    position: absolute;
+    bottom: 50%;
+    transform: translate(0, 50%);
+  }
+  .mision-img {
+    right: 15px;
+    box-shadow: 8px 8px 3px 2px #0062ff;
+  }
+  .vision-img {
+    left: 15px;
+    box-shadow: -8px 8px 3px 2px #0062ff;
+  }
+  .about-disc {
+    border: 2px solid #16b5ff;
+    border-radius: 30px;
+    height: 100%;
+    padding: 40px 30px;
+  }
+  .about-disc h3 {
+    font-size: 40px;
+    text-align: left;
+    margin-top: 15%;
+  }
+  .about-disc p {
+    font-size: 28px;
+    font-weight: 500;
+    color: #6b6b6bea;
+    margin-top: 40px;
+    text-align: left;
+  }
+  .vision p,
+  .vision h3 {
+    margin-left: 140px;
+  }
+  .about-sec3 h2 {
+    padding-bottom: 80px;
+  }
+  @media (max-width: 992px) {
+    .about-sec1 img {
+      height: 300px;
+      width: 100%;
+      border-radius: 0;
+    }
+    .mision-img,
+    .vision-img {
+      left: 0;
+      right: 0;
+      height: 150%;
+    }
+    .vision {
+      margin: 22em auto;
+    }
+    .about-sec2 img {
+      width: 90%;
+      height: 300px;
+      margin: 0 auto 20em;
+      bottom: -65%;
+      transform: translate(0, 75%);
+    }
+    .about-sec2 {
+      border: none;
+    }
+    .vision p,
+    .vision h3 {
+      margin-left: 40px;
+    }
+    .about-disc h3 {
+      margin-top: 8%;
+    }
+    #main-prtn {
+      margin: 90px auto 0;
+    }
+    .prtn-cont {
+      margin: 40px 0;
+      padding-top: 0;
+    }
+    .prtn-cont h5 {
+      font-size: 34px;
+    }
+    .prtn-cont p {
+      font-size: 22px;
+    }
+  }
+  

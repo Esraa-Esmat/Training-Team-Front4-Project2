@@ -1,0 +1,112 @@
+.font-loader {
+  font-family: "Philosopher", sans-serif;
+}
+
+.service-intro h2 {
+  font-weight: 500;
+  font-size: 40px;
+  padding-top: 50px;
+}
+.service-intro p {
+  padding: 30px 60px;
+  text-align: center;
+  font-size: 18px;
+  color: #3f3f3f;
+}
+
+.service-content {
+  /* padding-top: 80px; */
+  padding-bottom: 30px;
+}
+.mission {
+  position: relative;
+  margin-bottom: 10rem;
+}
+
+.service-sec {
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 100%;
+  margin: 70px 0;
+}
+.service-sec img {
+  width: 500px;
+  height: 450px;
+  border-radius: 32px;
+  position: absolute;
+  bottom: 50%;
+  transform: translate(0, 50%);
+}
+.service-img {
+  right: 0;
+  box-shadow: 6px 6px 5px 3px #0670c7;
+}
+/* .service-content 
+{
+    background-color: #0670c7;
+} */
+.service-content .mission:nth-child(even) .row {
+  flex-direction: row-reverse;
+}
+.service-content .mission:nth-child(even) img {
+  left: 15px;
+  box-shadow: -6px 6px 5px 3px #0062ff;
+}
+.service-content .mission:nth-child(even) p,
+.service-content .mission:nth-child(even) h3 {
+  margin-left: 5rem;
+}
+.service-disc {
+  border-radius: 30px;
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
+  padding: 40px 30px;
+}
+.service-disc h3 {
+  font-size: 40px;
+  text-align: left;
+  margin-top: 10%;
+  /* width: 50%; */
+}
+.service-disc p {
+  font-size: 28px;
+  font-weight: 500;
+  color: #6b6b6bea;
+  text-align: left;
+  /* width: 75%; */
+  margin-top: 40px;
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .service-disc p,
+  .service-disc h3 {
+    margin-right: 90px;
+  }
+  .service-content .mission:nth-child(even) p,
+  .service-content .mission:nth-child(even) h3 {
+    margin-left: 8rem;
+    margin-right: 0 !important;
+  }
+}
+@media (max-width: 992px) {
+  .mission {
+    margin: 10rem auto;
+  }
+  .service-sec img {
+    width: 100%;
+    margin: 4rem auto 0;
+    position: relative;
+  }
+  .service-disc p {
+    /* font-size: 20px; */
+    width: 100%;
+  }
+  .service-disc h3 {
+    /* font-size: 36px; */
+    width: 100%;
+  }
+  .service-content .mission:nth-child(even) p,
+  .service-content .mission:nth-child(even) h3 {
+    margin: auto;
+  }
+}

@@ -1,0 +1,11 @@
+.navbar-nav .nav-link  {
+  font-size: 20px; 
+  font-weight: bold;
+}
+.ImgLogo{
+  width: 144px;
+  }
+
+  .headerNav{
+    position: relative;
+  }

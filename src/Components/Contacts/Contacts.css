@@ -1,0 +1,28 @@
+.star::before {
+  content: "*";
+  color: rgb(255, 0, 0);
+  margin-left: 4px;
+  font-weight: bold;
+}
+
+
+
+@media (min-width: 993px) {
+  .map-img {
+    margin-bottom: -105px;
+  }
+}
+
+@media (max-width: 992px) {
+  .map-img {
+    margin-bottom: -50px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .map-img {
+    margin-bottom: -35px;
+  }
+
+}

@@ -1,0 +1,23 @@
+/* .themeDiv {
+    z-Index: 99;
+    position: absolute;
+    top: 17px;
+    right: 30px;
+} */
+
+.togleIco {
+    animation: showIcon 1s;
+}
+
+
+@keyframes showIcon {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

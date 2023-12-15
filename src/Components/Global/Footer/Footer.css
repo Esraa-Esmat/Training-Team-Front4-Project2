@@ -1,0 +1,15 @@
+.footer {
+    background: linear-gradient(to right, #001B47, #0062FF, #001B47);
+  }
+  
+.footerImg{
+  width: 273px;
+  height: 77px;
+}
+
+.footer .nav-link {
+  font-weight: bold;
+  font-size: 20px; 
+
+}
+

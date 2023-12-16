@@ -1,9 +1,6 @@
-/* .themeDiv {
-    z-Index: 99;
-    position: absolute;
-    top: 17px;
-    right: 30px;
-} */
+.themeDiv {
+    z-Index: 10000 !important;
+}
 
 .togleIco {
     animation: showIcon 1s;

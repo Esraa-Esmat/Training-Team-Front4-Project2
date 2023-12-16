@@ -1,3 +1,10 @@
+.headerNavbar{
+  z-index: 100000;
+  position: relative;
+  position: fixed;
+  top: 0;
+}
+
 .navbar-nav .nav-link  {
   font-size: 20px; 
   font-weight: bold;

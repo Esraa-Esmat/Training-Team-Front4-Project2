@@ -25,6 +25,8 @@ import AdminDashboardSideBar from './Components/AdminDashboard/AdminDashboardGlo
 import Chat from './Components/Chat/Chat';
 import SingleBlog from './Components/Blogs/SingleBlog';
 import Home from './Components/Home/Home';
+import UserDashboardPaper from './Components/UserDashboard/UserDashboardPaper';
+import UserDashboardServies from './Components/UserDashboard/UserDashboardServies';
 // import { ThemeProvider } from 'react-bootstrap';
 // eos
 
@@ -95,7 +97,8 @@ function App() {
 
         {/* ------------------------- User Dashboard -----------------------------------------*/}
         <Route path="/userdashboard" element={<UserDashboard />} />
-        {/* <Route path="/userdashboard" element={<UserDashboardPaper />} /> */}
+        <Route path="/userdashboardpaper" element={<UserDashboardPaper />} />
+        <Route path="/userdashboardservies" element={<UserDashboardServies />} />
 
         {/* ------------------------ /User Dashboard -----------------------------------------*/}
 

@@ -65,7 +65,7 @@ const Header = () => {
   return (
 
     <>
-      <Navbar bg={toggleDark ? 'dark' : 'light'} expand="lg" className="border-bottom border-primary py-3 fixed-top position-relative">
+      <Navbar bg={toggleDark ? 'dark' : 'light'} expand="lg" className="headerNavbar border-bottom border-primary py-3 fixed-top position-relative">
         <Container>
           <Navbar.Brand as={Link} to="/">
             <img src={toggleDark ? logoForDark : logoForLight} alt="Logo" className='ImgLogo' />

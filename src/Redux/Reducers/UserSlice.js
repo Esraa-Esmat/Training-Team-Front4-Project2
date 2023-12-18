@@ -1,46 +1,43 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { PapersData, ServicesDataUserDashboard } from '../../Components/DummyData/DummyData';
+// import { ServicesDataUserDashboard } from '../../Components/DummyData/DummyData';
 
 const UserSlice = createSlice({
   name: 'user',
   initialState: {
     login: false,
     userRole: null,
-    users: [],
     user: {},
+    activeLink: 'All Services',
+    papers: PapersData,
+    service: ServicesDataUserDashboard,
+    show: false
   },
   reducers: {
-    login: (state, action) => {
-      state.login = true;
-      state.user = action.payload;
+    setLogin: (state ,action) => {
+      state.login = action.payload;
     },
-    logout: (state) => {
-      state.login = false;
-      state.user = {};
+    setUserRole: (state ,action) => {
+      state.userRole = action.payload;
+      console.log(state.userRole);
     },
-    setUserRole: (state, action) => {
-      const id = action.payload;
+    setLogout: (state ,action) => {
+      state.login = action.payload;
+      state.userRole = null
+    },
+    setActiveLink: (state, action) => {
+      state.activeLink = action.payload;
+    },
+    deletePaper: (state, action) => {
+      state.papers = state.papers.filter(paper => paper.id !== action.payload);
+    },
+    setShow: (state, action) => {
+      state.show = action.payload;
+    },
 
-      if (id.startsWith('000')) {
-        state.userRole = 'admin';
-      } else if (id.startsWith('111')) {
-        state.userRole = 'user';
-      } else {
-        state.userRole = null;
-      }
-    },
-    addUser: (state, actions) => {
-      let id = Date.now();
-      state.users.push({ ...actions.payload, id });
-    },
-    updateUser: (state, action) => {
-      let data = action.payload;
-      const users = state.users.map((ele) =>
-        ele.id === data.id ? data : ele
-      );
-      state.users = users;
-    },
+
   },
 });
 
-export const { login, logout, userRole, addUser, updateUser,setUserRole } = UserSlice.actions;
+export const { setLogin,setLogout, userRole, addUser, updateUser, setUserRole, setActiveLink, deletePaper, setShow } = UserSlice.actions;
 export default UserSlice.reducer;

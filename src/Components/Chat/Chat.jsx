@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import { MessageBox, ChatList, Input } from 'react-chat-elements';
 import 'react-chat-elements/dist/main.css';
 import logo from '../../assest/images/Logo Text.svg'; // Make sure this path is correct
+import { Link } from 'react-router-dom';
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
@@ -40,7 +41,7 @@ const Chat = () => {
               avatar: logo,
               alt: 'User Avatar',
               // title: 'Tax Hub',
-              title: 'Hello, how can I help you?',
+              title: 'Hello, What is your services?',
               // subtitle: 'Hello, how can I help you?',
               date: new Date(),
               unread: 0,
@@ -65,6 +66,11 @@ const Chat = () => {
           rightButtons={<button onClick={sendMessage}>Send</button>}
         />
       </div>
+
+      <div className="text-end mt-5 ">
+                  <Link to="/addnewserviesuser" className="btn btn-danger mx-2 px-5 text-decoration-none" style={{ borderRadius: "35px", fontSize: "20px" }}>Cancel</Link>
+                  <Link to="/addnewserviesuser" className="btn btn-primary mx-2 px-5 text-decoration-none" style={{ borderRadius: "35px", fontSize: "20px" }}>Save</Link>
+                </div>
     </Container>
   );
 };

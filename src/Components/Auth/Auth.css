@@ -1,0 +1,73 @@
+.Login__card {
+    animation: login-zoom-in 1s ease-out forwards;
+    -webkit-animation: login-zoom-in 1s ease-out forwards;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
+
+/* ------------------------------- Login__card ----------------------------------------- */
+
+
+/* ----------------------- login-inputs ------------------------- */
+
+.login-inputs {
+    /* background-color: var(--input-bg-color); */
+    position: relative;
+}
+
+.login-inputs input::placeholder {
+    color: var(--placeholder);
+}
+
+.login-inputs input,
+.login-inputs input:focus {
+    outline: none;
+    border: var(--border-width) solid var(--input-bg-color);
+    /* background-color: var(--input-bg-color) !important; */
+    color: var(--white);
+    padding: 15px 15px;
+    box-shadow: none;
+}
+
+.login-inputs input:focus,
+.login-inputs input:active {
+    border-color: var(--primary);
+    /* box-shadow: 0px 0px 3px 1px #f9c731; */
+}
+
+.login-inputs input:-webkit-autofill,
+.login-inputs input:-webkit-autofill:hover,
+.login-inputs input:-webkit-autofill:focus,
+.login-inputs input:-webkit-autofill:active {
+    /* background-color: var(--input-bg-color) !important; */
+    -webkit-text-fill-color: var(--white);
+    -webkit-background-clip: text;
+    caret-color: white;
+}
+
+.login-inputs .login_left-icon {
+    position: absolute;
+    top: 25px;
+    left: 15px;
+}
+
+.login-inputs .login_right-icon {
+    position: absolute;
+    top: 13px;
+    right: 15px;
+}
+
+@keyframes login-zoom-in {
+    100% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+}
+
+.btn-sigup {
+    color: #bf9b30 !important;
+}
+
+.btn-forgetPassword:hover {
+    color: #bf9b30 !important;
+}

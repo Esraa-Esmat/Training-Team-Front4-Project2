@@ -12,21 +12,26 @@ import Contacts from './Components/Contacts/Contacts';
 import Login from './Components/Auth/Login/Login';
 import Register from './Components/Auth/Register/Register';
 import { useSelector } from 'react-redux';
-import AdminDashboard from './Components/AdminDashboard/AdminDashboard';
-import UserDashboard from './Components/UserDashboard/UserDashboard';
-import { useState } from 'react';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 
 import TogleTheme from './Components/Global/TogleTheme/TogleTheme';
 import { settoggleDark } from './Redux/Reducers/GlobalSlice';
-import AdminDashboardSideBar from './Components/AdminDashboard/AdminDashboardGlobal/AdminDashboardSideBar';
 import Chat from './Components/Chat/Chat';
 import SingleBlog from './Components/Blogs/SingleBlog';
 import Home from './Components/Home/Home';
-import UserDashboardPaper from './Components/UserDashboard/UserDashboardPaper';
-import UserDashboardServies from './Components/UserDashboard/UserDashboardServies';
+import UserAdminDashboard from './Components/AdminDashboard/UserAdminDashboard/AllUser/UserAdminDashboard';
+import ServicesAdminDashboard from './Components/AdminDashboard/ServicesAdminDashboard/ServicesAdminDashboard';
+import BlogsAdminDashboard from './Components/AdminDashboard/BlogsAdminDashboard/AllNewBlog/BlogsAdminDashboard';
+import AddNewUserAdmin from './Components/AdminDashboard/UserAdminDashboard/AddUserAdmin/AddNewUserAdmin';
+import AddNewBlogAdmin from './Components/AdminDashboard/BlogsAdminDashboard/AddNewBlogAdmin/AddNewBlogAdmin';
+import SettingAdminDashboard from './Components/Global/Dashboard/SettingAdminDashboard/SettingAdminDashboard';
+import ServicesUserDashboard from './Components/UserDashboard/ServicesUserDashboard/ServicesUserDashboard';
+import PersonalPapersUser from './Components/UserDashboard/PapersUser/PersonalPapersUser/PersonalPapersUser';
+import CompanyPapersUser from './Components/UserDashboard/PapersUser/CompanyPapersUser/CompanyPapersUser';
+import AddNewServiesUser from './Components/UserDashboard/ServicesUserDashboard/AddNewServiesUser/AddNewServiesUser';
+import ViewPapers from './Components/UserDashboard/PapersUser/CompanyPapersUser/ViewPapers';
 // import { ThemeProvider } from 'react-bootstrap';
 // eos
 
@@ -61,7 +66,7 @@ function App() {
     <ThemeProvider theme={myTheme}>
       <CssBaseline />
       <TogleTheme toggleDark={toggleDark} settoggleDark={settoggleDark} />
-      
+
       {/* ------------------------- Gobal -----------------------------------------*/}
       <ScrollToTopButton />
       <ToastContainer />
@@ -75,8 +80,8 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/blog" element={<Blogs />} />
         <Route path="/contact us" element={<Contacts />} />
-        <Route path="/singleblog" element={<SingleBlog/>} />
-        <Route path="/chat" element={<Chat/>} />
+        <Route path="/singleblog" element={<SingleBlog />} />
+        <Route path="/chat" element={<Chat />} />
 
         {/* ------------------------- /Common routes -----------------------------------------*/}
 
@@ -88,18 +93,33 @@ function App() {
         {/* ----------------------------------- Auth -----------------------------------------*/}
 
 
-        {/* ------------------------- Admin Dashboard -----------------------------------------*/}
-        {login && userRole === 'admin' && <Route path="/admindashboard" element={<AdminDashboard />} />}
+        {/* ------------------------- Dashboard -----------------------------------------*/}
+        {/* {login && userRole === 'admin' && <Route path="/admindashboard" element={<AdminDashboard />} />} */}
+
+        <Route path="/settingsdashboard" element={<SettingAdminDashboard />} />
+        {/* ------------------------ /Dashboard -----------------------------------------*/}
+
+        {/* ------------------------ Admin Dashboard -----------------------------------------*/}
+        <Route path="/useradmindashboard" element={<UserAdminDashboard />} />
+        <Route path="/addnewuseradmindashboard" element={<AddNewUserAdmin />} />
+
+        <Route path="/servicesadmindashboard" element={<ServicesAdminDashboard />} />
 
 
-        {/* ------------------------ /Admin Dashboard -----------------------------------------*/}
-        <Route path="/admindashboard" elemet={<AdminDashboardSideBar />} />
+        <Route path="/blogsadmindashboard" element={<BlogsAdminDashboard />} />
+        <Route path="/addnewblogsadmindashboard" element={<AddNewBlogAdmin />} />
+
+
+        {/* ------------------------- /Admin Dashboard -----------------------------------------*/}
 
         {/* ------------------------- User Dashboard -----------------------------------------*/}
-        <Route path="/userdashboard" element={<UserDashboard />} />
-        <Route path="/userdashboardpaper" element={<UserDashboardPaper />} />
-        <Route path="/userdashboardservies" element={<UserDashboardServies />} />
+        <Route path="/servicesuserdashboard" element={<ServicesUserDashboard />} />
+        <Route path="/personalpapersuser" element={< PersonalPapersUser/>} />
+        <Route path="/companypapersuser" element={<CompanyPapersUser />} />
+        <Route path="/addnewserviesuser" element={< AddNewServiesUser/>} />
+        <Route path="/viewpapers" element={< ViewPapers/>} />
 
+        {/* ViewPapers */}
         {/* ------------------------ /User Dashboard -----------------------------------------*/}
 
       </Routes>

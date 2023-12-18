@@ -35,3 +35,9 @@ code {
     display: none;
   }
 }
+.display {
+  display: none;
+}
+/* .Toastify .Toastify__toast-container{
+  z-index: 10000000000000px !important;
+} */

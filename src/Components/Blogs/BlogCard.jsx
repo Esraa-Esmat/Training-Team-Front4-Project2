@@ -3,9 +3,11 @@ import { Card, Col, Container, Image } from 'react-bootstrap';
 import BlogsFeatured from '../../assest/images/Blogs Featured Image.png'
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 
 const BlogCard = ({ display }) => {
   const { t, i18n } = useTranslation();
+  const userRole = useSelector((state) => state.UserSlice.userRole);
 
   return (
     <Col lg={4} md={6} sm={12} xs={10} className={`m-auto m-md-auto ${display ? display : ""}`}>
@@ -16,10 +18,22 @@ const BlogCard = ({ display }) => {
           <Card.Text className="lh-1 small">
             {t('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in volu')}
           </Card.Text>
+
+          <div className='linksCardBlog mt-4'>
+            <Card.Link href="/singleblog" className={`text-dark  mb-2 pb-4 ${i18n.language === 'en' ? '' : ''}`} >
+              {t('Read more')}
+            </Card.Link>
+
+            {userRole == 'Admin' && (<div>
+              <Card.Link href="/singleblog" className={`text-dark ms-3  mb-2 pb-4 ${i18n.language === 'en' ? '' : 'px-3'}`} >
+                Edit
+              </Card.Link>
+              <Card.Link href="/singleblog" className={`text-danger ms-3  mb-2 pb-4 ${i18n.language === 'en' ? '' : 'px-3'}`} >
+                Delete
+              </Card.Link>
+            </div>)}
+          </div>
         </Card.Body>
-        <Card.Link href="/singleblog" className={`text-dark ms-3 mb-2 pb-4 ${i18n.language === 'en' ? '' : 'px-3'}`} >
-          {t('Read more')}
-        </Card.Link>
       </Card>
     </Col>
   );

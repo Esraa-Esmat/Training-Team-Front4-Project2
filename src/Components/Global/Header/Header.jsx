@@ -6,10 +6,10 @@ import logoForDark from '../../../assest/images/logoFooter.png'
 import './Header.css';
 import { FaUserAlt, FaBars, FaGlobe } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '../../../Redux/Reducers/UserSlice';
 import { Link, useNavigate } from 'react-router-dom';
 import { setActiveLink } from '../../../Redux/Reducers/GlobalSlice';
 import { NavbarData } from '../../DummyData/DummyData';
+import { setLogin, setLogout } from '../../../Redux/Reducers/UserSlice';
 
 /*
 npm install i18next react-i18next
@@ -32,7 +32,7 @@ const Header = () => {
   const toggleDark = useSelector((state) => state.GlobalSlice.toggleDark);
 
   const handleLogout = () => {
-    dispatch(logout());
+    dispatch(setLogout(false));
 
   };
   const onUpdateActiveLink = (value) => {
@@ -59,8 +59,9 @@ const Header = () => {
   const handleSignUp = () => {
     navigate('/register');
   };
-  // console.log(activeLink);
-
+  const handleDashboard = () => {
+    userRole == 'admin' ? navigate('/useradmindashboard'):navigate('/servicesuserdashboard')
+  }
 
   return (
 
@@ -105,6 +106,7 @@ const Header = () => {
                     <Dropdown show={showDropdown} align="end" className="mt-1">
                       <Dropdown.Menu>
                         <Dropdown.Item onClick={handleLogout}>{t('Logout')}</Dropdown.Item>
+                        <Dropdown.Item className='py-2' onClick={handleDashboard}>{t('Dashboard')}</Dropdown.Item>
                       </Dropdown.Menu>
                     </Dropdown>
                   </div>

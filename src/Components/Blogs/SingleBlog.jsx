@@ -5,11 +5,14 @@ import BlogCard from './BlogCard'
 // import BlogCard from '../../components/shared/BlogCard'
 import BlogsFeatured from '../../assest/images/Blogs Featured Image.png'
 import { Row } from 'react-bootstrap'
+import { useSelector } from 'react-redux'
 
 const SingeBlog = () => {
+  const toggleDark = useSelector((state) => state.GlobalSlice.toggleDark);
+
   return (
     <>
-      <div className='container  overflow-hidden container-md px-md-5 m-auto' style={{ maxWidth: "992px" }}>
+      <div className={`container  overflow-hidden container-md px-md-5 m-auto ${toggleDark} ? 'bg-dark text-light' : 'bg-light text-dark`} style={{ maxWidth: "992px" }}>
         <h1 class="mb-5 mt-5">Lorem ipsum dolor sit amet</h1>
         <TextBlock />
         <TextBlock />

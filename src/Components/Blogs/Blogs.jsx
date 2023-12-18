@@ -8,12 +8,15 @@ import BlogsFeatured from '../../assest/images/Blogs Featured Image.png'
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import CTA from '../Global/CTA/CTA';
+import { useSelector } from 'react-redux';
 
 const Blogs = () => {
+  const toggleDark = useSelector((state) => state.GlobalSlice.toggleDark);
+
   return (
     <>
       <MainTitle />
-      <Container className='p-4 rounded-5 '>
+      <Container className={`p-4 rounded-5 ${toggleDark} ? 'bg-dark text-light' : 'bg-light text-dark`}>
         <Card className="d-flex align-items-center rounded-5" style={{ border: "1px solid rgb(55, 182, 255)" }}>
           <Row className="justify-content-center align-items-center container">
             <Col md={4}>

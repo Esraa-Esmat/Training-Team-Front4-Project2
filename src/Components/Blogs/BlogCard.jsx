@@ -8,10 +8,11 @@ import { useSelector } from 'react-redux';
 const BlogCard = ({ display }) => {
   const { t, i18n } = useTranslation();
   const userRole = useSelector((state) => state.UserSlice.userRole);
+  const toggleDark = useSelector((state) => state.GlobalSlice.toggleDark);
 
   return (
     <Col lg={4} md={6} sm={12} xs={10} className={`m-auto m-md-auto ${display ? display : ""}`}>
-      <Card className='rounded-4 my-4' style={{ border: "1px solid rgb(55, 182, 255)" }}>
+      <Card className={`rounded-4 my-4${ toggleDark} ? 'bg-dark text-light' : 'bg-light text-dark`} style={{ border: "1px solid rgb(55, 182, 255)" }}>
         <Image fluid src={BlogsFeatured} alt="photo" className="card-img-top" />
         <Card.Body>
           <Card.Title className="mb-3 fw-bold">{t('Lorem ipsum dolor sit amet')}</Card.Title>

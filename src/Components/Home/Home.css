@@ -1,7 +1,4 @@
-.main {
-    height: 100vh;
 
-}
 
 .content {
     width: 79%;
@@ -16,22 +13,7 @@
     -o-transform: translate(-35%, -50%);
 }
 
-.title1 {
-    font-size: 4.6rem;
-    font-weight: bolder;
-}
 
-.p-content-main {
-    font-size: 2.2rem;
-
-}
-
-.p1 {
-    color: #fff;
-    font-size: 21px;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-}
 
 .btnmain {
     width: 260px;

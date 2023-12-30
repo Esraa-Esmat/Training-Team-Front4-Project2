@@ -61,7 +61,7 @@ export const AdminSidebarData = [
     id: 24,
     title: 'Settings',
     titleAr: 'الإعدادات',
-    path: ['/settingsadmindashboard'],
+    path: ['/settingsdashboard'],
     data: [],
     dataAr: [],
   },

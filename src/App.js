@@ -36,7 +36,6 @@ import ViewPapers from './Components/UserDashboard/PapersUser/CompanyPapersUser/
 // eos
 
 
-
 function App() {
 
   const login = useSelector((state) => state.UserSlice.login);
@@ -92,34 +91,33 @@ function App() {
         {!login && userRole == null && <Route path="/register" element={<Register />} />}
         {/* ----------------------------------- Auth -----------------------------------------*/}
 
-
+      
         {/* ------------------------- Dashboard -----------------------------------------*/}
-        {/* {login && userRole === 'admin' && <Route path="/admindashboard" element={<AdminDashboard />} />} */}
 
-        <Route path="/settingsdashboard" element={<SettingAdminDashboard />} />
+        {login && <Route path="/settingsdashboard" element={<SettingAdminDashboard />} />}
         {/* ------------------------ /Dashboard -----------------------------------------*/}
 
         {/* ------------------------ Admin Dashboard -----------------------------------------*/}
-        <Route path="/useradmindashboard" element={<UserAdminDashboard />} />
-        <Route path="/addnewuseradmindashboard" element={<AddNewUserAdmin />} />
+        {login && userRole === 'admin' && <Route path="/useradmindashboard" element={<UserAdminDashboard />} />}
+        {login && userRole === 'admin' && <Route path="/addnewuseradmindashboard" element={<AddNewUserAdmin />} />}
+        <Route path="/viewpapers" element={<ViewPapers/>} />
 
-        <Route path="/servicesadmindashboard" element={<ServicesAdminDashboard />} />
+        {login && userRole === 'admin' && <Route path="/servicesadmindashboard" element={<ServicesAdminDashboard />} />}
+        {login && userRole === 'admin' && <Route path="/viewpapers" element={<ViewPapers/>} />}
 
-
-        <Route path="/blogsadmindashboard" element={<BlogsAdminDashboard />} />
-        <Route path="/addnewblogsadmindashboard" element={<AddNewBlogAdmin />} />
-
+        {login && userRole === 'admin' && <Route path="/blogsadmindashboard" element={<BlogsAdminDashboard />} />}
+        {login && userRole === 'admin' && <Route path="/addnewblogsadmindashboard" element={<AddNewBlogAdmin />} />}
 
         {/* ------------------------- /Admin Dashboard -----------------------------------------*/}
 
         {/* ------------------------- User Dashboard -----------------------------------------*/}
-        <Route path="/servicesuserdashboard" element={<ServicesUserDashboard />} />
-        <Route path="/personalpapersuser" element={< PersonalPapersUser/>} />
-        <Route path="/companypapersuser" element={<CompanyPapersUser />} />
-        <Route path="/addnewserviesuser" element={< AddNewServiesUser/>} />
-        <Route path="/viewpapers" element={< ViewPapers/>} />
+        {login && userRole === 'user' && <Route path="/servicesuserdashboard" element={<ServicesUserDashboard />} />}
 
-        {/* ViewPapers */}
+        {login && userRole === 'user' && <Route path="/personalpapersuser" element={< PersonalPapersUser />} />}
+        {login && userRole === 'user' && <Route path="/companypapersuser" element={<CompanyPapersUser />} />}
+        
+        {login && userRole === 'user' && <Route path="/addnewserviesuser" element={< AddNewServiesUser />} />}
+
         {/* ------------------------ /User Dashboard -----------------------------------------*/}
 
       </Routes>

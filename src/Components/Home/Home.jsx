@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import img1 from "../../assest/images/group-diverse-people-having-business-meeting 2.png";
-import img2 from "../../assest/images/teamwork-strategy-lead-business-success-generated-by-ai 1.png";
 import fine from "../../assest/images/fineLogo.png";
 import fayum from "../../assest/images/fayum gas.png";
 import redBull from "../../assest/images/Red Bull.png";
@@ -13,93 +12,73 @@ import './Home.css'
 
 import OurService from "./OurService";
 import ExploreBlogs from "../Blogs/ExploreBlogs";
+import { Button, Col, Container, Row } from "react-bootstrap";
+import MainSection from "./MainSection";
+import OurValues from "./OurValues";
+
+  
 
 const Home = () => {
+
   return (
     <div style={{ fontFamily: 'ZCOOL XiaoWei, sans-serif' }}>
-      <div className="main mb-4">
-        <div className="card bg-primary text-white">
-          <img src={img1} className="card-img" alt="..." />
-          <div className="card-img-overlay">
-            <div className="content">
-              <h2 className="title1 text-white text-uppercase">Charter Accountants <span className="text-primary d-block"><span className='text-white'>&</span> Tax Experts</span></h2>
-              <p className="p-content-main lh-sm my-5 pb-3">general professional partnership of Certified Public Accountants with strong
-                academic credentials and professional experience. Our commitment is not
-                just to provide high-level, impactful, and dependable professional services,
-                but also to promote highly responsive client relationship.</p>
-              <button className="btnmain btn1 bg-primary me-3">Request A Service</button>
-              <button className="btnmain btn2 bg-transparent text-primary" style={{ width: "220px" }}>learn more</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <MainSection />
       {/* ------- */}
-      <div className="container-our-value w-100">
-        <div className="rate-our-values m-auto d-flex justify-content-around mb-5 border-secondary-subtle rounded-4">
-          <div className="rate-one text-lg-center">
+      <div className="container-our-value my-5 p-3 mb-3">
+        <div className="rate-our-values container border-secondary-subtle rounded-4">
+          <Row className="rate-one text-lg-center">
             <Counter endValue={30} name={"Years of Experience"} />
             <Counter endValue={50} name={"Clients in Egypt"} />
             <Counter endValue={100} name={"Assignment in all Sectors"} />
-          </div>
+          </Row>
         </div>
-        <div className="content-our-values" style={{ width: "85%", marginBottom: "9rem" }}>
-          <div className="card mb-3 border-primary rounded-5" style={{ maxWidth: "50rem", height: "31em" }}>
-            <div className="row g-0">
-              <div className="col-md-8">
-                <div className="card-body mt-3 p-5">
-                  <h5 className="card-title fs-1 mb-4">OUR VALUES</h5>
-                  <p className="card-text fs-4 lh-sm text-secondary">We are dedicated to empowering individuals,
-                    businesses, and communities by providing
-                    innovative and cutting-edge technology solutions
-                    that unlock new possibilities and drive positive
-                    change. Our mission is to make technology
-                    accessible, reliable, and impactful, enabling our
-                    customers to thrive in the digital era and shape a
-                    better future for all.</p>
-                  <a href="#" className="text-decoration-none fs-4">Learn More <i className="fa-solid fa-arrow-right"></i> </a>
-                </div>
-              </div>
-              <div className="col-md-4 mt-4">
-                <img src={img2} className="img-fluid-card rounded-5 border-end ms-5" alt="..." />
-              </div>
-            </div>
-          </div>
-        </div>
+        <OurValues />
       </div>
-      <section className="our-services">
-        <h1 className="fs-1 text-lg-center pt-5 text-our-services">OUR SERVICES</h1>
-        <div className="container">
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+
+
+      <section className="our-services py-3 pt-5">
+        <h1 className="fs-1 fw-bold text-lg-center py-5 text-our-services">OUR SERVICES</h1>
+        <Container>
+          <Row className="g-4 py-3">
             <OurService title="Tax Services & Consultations" num='01' />
             <OurService title="Auditing & Assurance" num='02' />
-            <OurService title="Bookkeeping" num='03' />
-          </div>
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+            <OurService title="Book keeping" num='03' />
             <OurService title="Investment & Incorporation" num='04' />
             <OurService title="Social Insurance" num='05' />
             <OurService title="Training Workshops" num='06' />
-            <div className="m-auto w-25">
-              <Link to="/contact" className="btn btn-primary text-decoration-none rounded-pill px-3 w-75 my-3" style={{ fontSize: "26px" }}>Contact Us</Link>
-            </div>
+          </Row>
+          <div className="text-center py-3">
+            <Link to="/contact" className="btn btn-primary text-decoration-none rounded-pill px-5 my-3" style={{ fontSize: "26px" }}>Contact Us</Link>
           </div>
-        </div>
+        </Container>
+      </section>
+    <section className="sponserd">
+        <Container>
+          <Row className="align-items-center">
+            <Col xs={12} sm={4}>
+              <h2 className="fs-2" style={{ fontSize: "50px" }}>OUR CLIENTS</h2>
+            </Col>
+            <Col xs={6} sm={2} md={1}>
+              <img className="img-fluid mt-3 mb-3" src={fine} alt="fineLogo" />
+            </Col>
+            <Col xs={6} sm={2} md={1}>
+              <img className="img-fluid mb-3" src={arab} alt="arab afrian" />
+            </Col>
+            <Col xs={6} sm={2} md={1}>
+              <img className="img-fluid" src={redBull} alt="Red Bull" />
+            </Col>
+            <Col xs={6} sm={2} md={1}>
+              <img className="img-fluid" src={fayum} alt="fayum gas" />
+            </Col>
+            <Col xs={6} sm={2} md={1}>
+              <img className="img-fluid" src={air} alt="airaraia" />
+            </Col>
+          </Row>
+        </Container>
       </section>
 
-      <section className="sponserd">
-        <div className="container">
-          <div className="row">
-            <div className="col-4 fs-2"><h2 style={{ fontSize: "50px" }}>OUR CLIENTS</h2></div>
-            <div className="col"><img className="mt-3" src={fine} alt="fineLogo" /></div>
-            <div className="col"><img className="mb-3" src={arab} alt="arab afrian" /></div>
-            <div className="col"><img src={redBull} alt="Red Bull" /></div>
-            <div className="col"><img src={fayum} alt="fayum gas" /></div>
-            <div className="col"><img src={air} alt="airaraia" /></div>
-          </div>
-        </div>
-      </section>
-      <ExploreBlogs/>
-   
-    </div>
+      <ExploreBlogs />
+    </div >
   );
 }
 

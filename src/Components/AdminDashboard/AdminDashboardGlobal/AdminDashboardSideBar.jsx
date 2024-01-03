@@ -5,8 +5,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setActiveLink } from '../../../Redux/Reducers/AdminSlice';
 import './AdminDashboard.css'
+import { setLogout } from '../../../Redux/Reducers/UserSlice';
 
 const AdminDashboardSideBar = () => {
+    
     const { t, i18n } = useTranslation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -31,6 +33,10 @@ const AdminDashboardSideBar = () => {
     const handleSelectTitle = (title) => {
         { title == 'settings' && navigate('/settingsadmindashboard') }
     }
+    const handleLogout = () => {
+        navigate('/')
+        dispatch(setLogout(false));
+    };
 
     return (
         <Container >
@@ -64,7 +70,7 @@ const AdminDashboardSideBar = () => {
                     </div>
                 ))
                 }
-                <Button variant='dark' className='w-100 rounded-0 rounded-bottom mt-2'>{t('Logout')}</Button>
+                <Button variant='dark' onClick={handleLogout} className='w-100 rounded-0 rounded-bottom mt-2'>{t('Logout')}</Button>
 
             </div >
         </Container >

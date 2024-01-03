@@ -6,11 +6,13 @@ import DashboardHeader from '../../Global/Dashboard/DashboardHeader/DashboardHea
 import UserDashboardSideBar from '../UserDashboardGlobal/UserDashboardSideBar'
 import '../UserDashboardGlobal/UserDashboard.css'
 import TableAllServices from './TableServices/TableAllServices'
+import { useTranslation } from 'react-i18next'
 
 
 const ServicesUserDashboard = () => {
     const activeLink = useSelector((state) => state.UserSlice.activeLink);
-    // const sortData = useSelector((state) => state.UserSlice.sortData);
+  const toggleDark = useSelector((state) => state.GlobalSlice.toggleDark);
+  const { t, i18n } = useTranslation();
 
     return (
         <>
@@ -25,8 +27,10 @@ const ServicesUserDashboard = () => {
 
                     <Col sm={9}>
                         <div style={{ paddingRight: '50px' }}>
-                            <div className="bg-light my-5 rounded-5">
-                                <DashboardHeader pageTitle={'All services'} />
+                        <div className={`my-5 rounded-5  ${toggleDark ? 'bg-dark text-light border' : 'bg-light text-dark'}`}>
+                                {/* <DashboardHeader pageTitle={'All services'} /> */}
+                                <DashboardHeader pageTitle={t('All services')} />
+
                                 <TableAllServices activeLink={activeLink}/>
                                 <PaginationBar />
 

@@ -4,17 +4,15 @@ import BlogCard from './BlogCard'
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 
 const ExploreBlogs = () => {
     const { t, i18n } = useTranslation();
 
-    const toggleDark = useSelector((state) => state.GlobalSlice.toggleDark);
 
     return (
         <>
             <Container style={{ marginTop: '100px', marginBottom: '50px' }}>
-                <div className={`section ${toggleDark} ? 'text-light' : ' text-dark`}>
+                <div className="section pb-4">
                     <div className='px-2'>
                         <h2 className="text-dark d-start mt-5" style={{ fontFamily: 'Mulish' }}>{t('Explore our Latest Blogs')}</h2>
                     </div>

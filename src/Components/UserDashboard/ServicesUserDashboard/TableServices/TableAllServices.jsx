@@ -3,9 +3,11 @@ import { Table } from 'react-bootstrap'
 import { ServicesDataHeaderUserDashboard } from '../../../DummyData/DummyData'
 import { useTranslation } from 'react-i18next'
 import TableBodyAllServices from './TableBodyAllServices'
+import { useSelector } from 'react-redux'
 
 const TableAllServices = () => {
     const { t, i18n } = useTranslation();
+    const toggleDark = useSelector((state) => state.GlobalSlice.toggleDark);
 
     const DataLang = ServicesDataHeaderUserDashboard.map((data) => {
         if (i18n.language === 'ar') {
@@ -18,7 +20,7 @@ const TableAllServices = () => {
     })
 
     return (
-        <Table hover className='my-3'>
+        <Table hover className={`my-3 ${toggleDark ? 'table-dark ' : 'table-light'}`}>
             <thead className="table-header">
                 <tr >
                     {DataLang.map((data) => (

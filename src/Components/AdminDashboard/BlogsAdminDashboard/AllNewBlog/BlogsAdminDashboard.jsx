@@ -22,8 +22,7 @@ const BlogsAdminDashboard = () => {
 
                 <Col sm={9}>
                     <div style={{ paddingRight: '50px' }}>
-                        <div className={`bg-light my-5 rounded-5 ${toggleDark ? 'bg-dark text-light' : 'bg-light text-light'}`}
-                        >
+                        <div className={`bg-light my-5 rounded-5 border ${toggleDark ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
                             <DashboardHeader pageTitle={'All Blogs'} />
                             {/* <TableUser /> */}
                            <BlogsContent/>

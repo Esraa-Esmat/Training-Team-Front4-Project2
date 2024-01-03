@@ -3,8 +3,11 @@ import { Col, Container, Row } from 'react-bootstrap'
 import AdminDashboardSideBar from '../../AdminDashboardGlobal/AdminDashboardSideBar'
 import AddBlog from './AddBlog'
 import DashboardHeader from '../../../Global/Dashboard/DashboardHeader/DashboardHeader'
+import { useSelector } from 'react-redux'
 
 const AddNewBlogAdmin = () => {
+  const toggleDark = useSelector((state) => state.GlobalSlice.toggleDark);
+
   return (
     <Container fluid>
     <Row>
@@ -17,7 +20,8 @@ const AddNewBlogAdmin = () => {
 
       <Col sm={9}>
         <div style={{ paddingRight: '50px' }}>
-          <div className="bg-light my-5 rounded-5">
+          <div className={`my-5 rounded-5 border ${toggleDark ? 'bg-dark text-light border' : ''}`}>
+
             <DashboardHeader pageTitle={'Add New Blog'} display={'display'} />
             <AddBlog/>
           </div>

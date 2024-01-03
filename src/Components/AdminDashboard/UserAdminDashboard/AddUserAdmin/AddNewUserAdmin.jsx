@@ -21,7 +21,7 @@ const AddNewUserAdmin = () => {
 
         <Col sm={9}>
           <div style={{ paddingRight: '50px' }}>
-            <div className={`my-5 rounded-5 ${toggleDark ? 'bg-dark text-light border' : ''}`}>
+            <div className={`my-5 rounded-5 border ${toggleDark ? 'bg-dark text-light border' : ''}`}>
               <DashboardHeader pageTitle={'Add New User'} display={'display'} />
               <AddUser />
             </div>

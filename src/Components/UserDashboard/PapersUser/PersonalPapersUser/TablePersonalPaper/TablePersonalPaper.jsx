@@ -3,9 +3,11 @@ import { Table } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import TableBody from './TableBody'
 import { PersonalPapersHeader } from '../../../../DummyData/DummyData'
+import { useSelector } from 'react-redux'
 
 const TablePersonalPaper = () => {
     const { t, i18n } = useTranslation();
+    const toggleDark = useSelector((state) => state.GlobalSlice.toggleDark);
 
     const DataLang = PersonalPapersHeader.map((data) => {
         if (i18n.language === 'ar') {
@@ -18,7 +20,7 @@ const TablePersonalPaper = () => {
     })
 
     return (
-        <Table hover className='my-3'>
+        <Table hover className={`my-3 ${toggleDark ? 'table-dark ' : 'table-light'}`}>
             <thead className="table-header">
                 <tr >
                     {DataLang.map((data) => (

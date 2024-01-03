@@ -7,11 +7,13 @@ import { TbArrowsDownUp } from "react-icons/tb";
 import { FiSearch } from "react-icons/fi";
 import { useDispatch, useSelector } from 'react-redux';
 import { setSearchQuery, setSortData } from '../../../../Redux/Reducers/GlobalSlice';
+import { useTranslation } from 'react-i18next';
 
 const DashboardHeader = ({ pageTitle, display }) => {
   const sortData = useSelector((state) => state.GlobalSlice.sortData);
   const searchQuery = useSelector((state) => state.GlobalSlice.searchQuery);
   const toggleDark = useSelector((state) => state.GlobalSlice.toggleDark);
+  const { t, i18n } = useTranslation();
 
   const dispatch = useDispatch()
 
@@ -38,7 +40,7 @@ const DashboardHeader = ({ pageTitle, display }) => {
             <Form.Control
               type='text'
               aria-describedby="inputGroup-sort"
-              placeholder="sort by"
+              placeholder={t('sort by')}
             />
 
 
@@ -61,7 +63,7 @@ const DashboardHeader = ({ pageTitle, display }) => {
             <Form.Control
               type='text'
               aria-describedby="inputGroup-search"
-              placeholder="Search list ..."
+              placeholder={t('Search list ...')}
               onChange={handleSearch}
               value={searchQuery}
 

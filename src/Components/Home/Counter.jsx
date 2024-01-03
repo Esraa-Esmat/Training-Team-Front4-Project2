@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Col } from 'react-bootstrap';
 
-const Counter = ({ endValue , name }) => {
+const Counter = ({ endValue, name }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -16,13 +17,15 @@ const Counter = ({ endValue , name }) => {
 
     return () => clearInterval(intervalId);
   }, [endValue]);
-    
+
   return (
     <>
-      <ul className='d-inline-block py-4'>
-        <li className="no-1 fs-bold">{count}+</li>
-        <li className="fs-4">{name}</li>
-      </ul>
+      <Col   >
+        <div className='py-4 text-center'>
+          <h2 className="fw-bold our-values-title">{count}+</h2>
+          <p className="fs-4 our-values-p">{name}</p>
+        </div>
+      </Col>
     </>
   );
 };

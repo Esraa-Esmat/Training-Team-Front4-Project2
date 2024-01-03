@@ -7,11 +7,13 @@ import DashboardHeader from '../../../Global/Dashboard/DashboardHeader/Dashboard
 import PaginationBar from '../../../Global/PaginationBar'
 import TableServices from './TableAddServices/TableServices'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 
 const AddNewServiesUser = () => {
   const activeLink = useSelector((state) => state.UserSlice.activeLink);
-  // const sortData = useSelector((state) => state.UserSlice.sortData);
+  const toggleDark = useSelector((state) => state.GlobalSlice.toggleDark);
+  const { t, i18n } = useTranslation();
 
   return (
     <>
@@ -26,8 +28,10 @@ const AddNewServiesUser = () => {
 
           <Col sm={9}>
             <div style={{ paddingRight: '50px' }}>
-              <div className="bg-light my-5 rounded-5">
-                <DashboardHeader pageTitle={'Request New Service'} />
+              <div className={`my-5 rounded-5  ${toggleDark ? 'bg-dark text-light border' : 'bg-light text-dark'}`}>
+
+                <DashboardHeader pageTitle={t('Request New Service')} />
+
                 <TableServices activeLink={activeLink} />
               
                 <PaginationBar />

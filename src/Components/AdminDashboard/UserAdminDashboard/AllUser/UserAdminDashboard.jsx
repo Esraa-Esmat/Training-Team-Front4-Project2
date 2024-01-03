@@ -23,7 +23,7 @@ const UserAdminDashboard = () => {
 
           <Col sm={9}>
             <div style={{ paddingRight: '50px' }}>
-              <div className={`${toggleDark ? 'bg-dark text-light border' : 'bg-light text-dark'} my-5 rounded-5`}>
+              <div className={`${toggleDark ? 'bg-dark text-light' : 'bg-light text-dark'} border my-5 rounded-5`}>
                 <DashboardHeader pageTitle={'All Users'} />
                 <TableUser />
                 <PaginationBar />

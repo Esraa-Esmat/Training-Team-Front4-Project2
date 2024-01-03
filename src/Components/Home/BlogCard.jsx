@@ -1,11 +1,8 @@
 import React from 'react';
 import icon from '../../assest/images/Blogs Featured Image.png'
-import { useSelector } from 'react-redux';
 const BlogCard = () => {
-  const toggleDark = useSelector((state) => state.GlobalSlice.toggleDark);
-
     return (
-        <div className={`col ${toggleDark} ? 'bg-dark text-light' : 'bg-light text-light`}>
+        <div className="col">
         <div className="card">
           <img src={icon} className="card-img-top" alt="..."/>
           <div className="card-body">
